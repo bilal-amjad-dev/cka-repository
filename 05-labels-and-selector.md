@@ -3,33 +3,33 @@
 
 `pod.yaml`
 ```bash
- apiVersion: v1
- kind: Pod
- metadata:
-  name: simple-webapp
+apiVersion: v1
+kind: Pod
+metadata:
+  name: my-nginx-pod
   labels:
-    app: App1
-    function: Front-end
- spec:
+    app: my-nginx-app
+spec:
   containers:
-  - name: simple-webapp
-    image: simple-webapp
+  - name: nginx-container
+    image: nginx:latest
     ports:
-    - containerPort: 8080
+    - containerPort: 80
 ```
 
 
 `service.yaml`
 ```bash
-  apiVersion: v1
-  kind: Service
-  metadata:
-   name: my-service
-  spec:
-   selector:
-     app: App1
-   ports:
-   - protocol: TCP
-     port: 80
-     targetPort: 9376
+apiVersion: v1
+kind: Service
+metadata:
+  name: my-nginx-service
+spec:
+  selector:
+    app: my-nginx-app
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80
+  type: NodePort
 ```
