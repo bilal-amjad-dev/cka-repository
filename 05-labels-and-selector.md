@@ -44,3 +44,15 @@ kubectl get all --show-labels
 ```bash
 kubectl get pod --selector app=my-nginx-app
 ```
+
+or 
+
+```bash
+kubectl get pod -l app=my-nginx-app
+```
+
+
+- `--selector` is the full, descriptive flag name.
+- `-l` is the shorthand, or alias, for --selector.
+
+Using -l is very common in Kubernetes commands because it saves typing and makes the command more concise. 
