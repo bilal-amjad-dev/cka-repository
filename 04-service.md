@@ -36,3 +36,12 @@ spec:
     ports:
     - containerPort: 80
 ```
+
+
+
+
+- The Pod YAML has a `labels` field under its `metadata`. In the example, this is `app: my-nginx-app`.
+
+- The Service YAML has a `selector` field under its `spec`. The Service uses this selector (`app: my-nginx-app`)
+
+- This is how Kubernetes Services know which Pods to send traffic to. The selector is the "glue" that connects a Service to its corresponding Pods.
