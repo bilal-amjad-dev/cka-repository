@@ -77,6 +77,28 @@ spec:
 ```
 
 
+
+
+- Run the command kubectl get daemonsets --all-namespaces
+
+```bash
+kubectl get daemonsets --all-namespaces
+```
+
+- Run the command kubectl get all --all-namespaces and identify the types
+
+```bash
+kubectl get all --all-namespaces
+```
+
+
+- Run the command kubectl describe daemonset kube-proxy --namespace=kube-system
+
+```bash
+kubectl describe daemonset kube-proxy --namespace=kube-system
+```
+
+
 ### Question: 
 
 If you have 50 nodes in your cluster, a DaemonSet will create a Pod on every one of those **50 nodes**.
