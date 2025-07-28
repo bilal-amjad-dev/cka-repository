@@ -50,4 +50,29 @@ spec:
         image: monitoring-agent
 ```
 
+---
+
+If a Pod is for a regular **application** (like a web server), you should use a **Deployment** because it manages a ReplicaSet to maintain the Pod count.
+
+Now, to answer your question: **What kind of Pod does a DaemonSet run?**
+
+A DaemonSet runs a Pod that is not an application for end-users, but rather a **system-level** or **infrastructure-level** Pod. Its job is to provide a service for the cluster itself.
+
+A DaemonSet runs Pods that are:
+
+**Monitoring Pods:** To check the health, CPU, and memory of every node.
+
+**Logging Pods:** To collect logs from all containers on a node and send them to a central location.
+
+**Security Pods:** To enforce security policies on every host.
+
+These Pods exist to support the cluster's operation, not to run an end-user application.
+
+**To put it simply:**
+
+A **Deployment** runs an **Application** for end-users. (e.g., a website)
+
+A **DaemonSet** runs a **Utility** for the cluster's infrastructure. (e.g., a security camera in every room)
+
+
 Date: 28-July-2025
