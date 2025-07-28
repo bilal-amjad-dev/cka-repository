@@ -2,8 +2,7 @@
 
 
 
-- In node selector, our pod is created in our mentioned node.
-- In the pod’s YAML definition, add a nodeSelector field specifying the same key-value pair.
+In Kubernetes, a `nodeSelector` is a field you add to a Pod's specification that tells the scheduler to only schedule the Pod on a node that has a specific label.
 
 
 This is incredibly useful for scenarios where you need to run certain workloads on nodes with special capabilities, such as:
