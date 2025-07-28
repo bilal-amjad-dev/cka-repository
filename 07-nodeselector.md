@@ -4,8 +4,11 @@
 
 Using `nodeSelector` is a two-step process:
 
-Step 1: Label a Node
-First, you need to add a label to one or more of your cluster nodes. You do this with a kubectl command. Let's say you have a node named `my-gpu-node` that has a GPU, and you want to label it accordingly.
+**Step 1: Label a Node**
+
+First, you need to add a label to one or more of your cluster nodes. 
+
+You do this with a kubectl command. Let's say you have a node named `my-gpu-node` that has a GPU, and you want to label it accordingly.
 
 ```bash
 kubectl label node my-gpu-node gpu=true
