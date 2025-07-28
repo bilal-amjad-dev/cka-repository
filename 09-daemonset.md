@@ -77,6 +77,10 @@ spec:
 ```
 
 
+### Question: 
 
+If you have 50 nodes in your cluster, a DaemonSet will create a Pod on every one of those **50 nodes**.
+
+The DaemonSet controller's job is to ensure this "one Pod per node" rule is always maintained. If you later add a 51st node, the DaemonSet will automatically create a new Pod on it. If you remove a node, it will automatically remove the Pod that was running on it.
 
 Date: 28-July-2025
