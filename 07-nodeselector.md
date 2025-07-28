@@ -1,8 +1,20 @@
 
+
+
+
 - In node selector, our pod is created in our mentioned node.
 - In the pod’s YAML definition, add a nodeSelector field specifying the same key-value pair.
 
-Using `nodeSelector` is a two-step process:
+
+This is incredibly useful for scenarios where you need to run certain workloads on nodes with special capabilities, such as:
+
+Nodes with a **GPU** for machine learning tasks.
+
+- Nodes in a specific **geographic location** or a specific **rack**.
+
+- Nodes with a high amount of **memory** or **CPU** power.
+
+- Using `nodeSelector` is a two-step process:
 
 **Step 1: Label a Node**
 
@@ -15,7 +27,9 @@ kubectl label node my-gpu-node gpu=true
 ```
 
 
-Step 2: Add the `nodeSelector` to the Pod
+**Step 2: Add the `nodeSelector` to the Pod**
+
+Now, you create a Pod that will only run on nodes that have the gpu=true label. You add the nodeSelector field to the Pod's spec.
 
 `pod-with-nodeselector.yaml`
 
