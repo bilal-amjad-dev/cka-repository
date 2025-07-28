@@ -47,6 +47,25 @@ spec:
 ```
 
 
+Example 2:
+
+```bash
+$ kubectl label nodes node-1 size=Large
+```
+
+```bash
+apiVersion: v1
+kind: Pod
+metadata:
+ name: myapp-pod
+spec:
+ containers:
+ - name: data-processor
+   image: data-processor
+ nodeSelector:
+  size: Large
+```
+
 Summary
 In short, `nodeSelector` is the simplest way to constrain Pods to specific nodes by following this clear pattern:
 
