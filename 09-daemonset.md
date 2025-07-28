@@ -20,37 +20,6 @@ Common use cases include:
 
 - **Security Agents:** Running a security or network policy agent on every node to enforce cluster-wide rules.
 
-**DaemonSets vs. Other Controllers**
-
-| Controller   | What It Does                              | Example Use Case                        |
-|--------------|-------------------------------------------|-----------------------------------------|
-| **ReplicaSet** | Ensures a **specific number** of Pods are running. | Running 3 copies of a web server        |
-| **Deployment**  | Manages ReplicaSets for rolling updates.   | Updating a web server to a new version   |
-| **DaemonSet**    | Ensures **one Pod on every node**.             | Running a log collector on every machine |
-
-
-```bash
-apiVersion: apps/v1
-kind: DaemonSet
-metadata:
-  name: monitoring-daemon
-  labels:
-    app: nginx
-spec:
-  selector:
-    matchLabels:
-      app: monitoring-agent
-  template:
-    metadata:
-     labels:
-       app: monitoring-agent
-    spec:
-      containers:
-      - name: monitoring-agent
-        image: monitoring-agent
-```
-
----
 
 If a Pod is for a regular **application** (like a web server), you should use a **Deployment** because it manages a ReplicaSet to maintain the Pod count.
 
@@ -73,6 +42,41 @@ These Pods exist to support the cluster's operation, not to run an end-user appl
 A **Deployment** runs an **Application** for end-users. (e.g., a website)
 
 A **DaemonSet** runs a **Utility** for the cluster's infrastructure. (e.g., a security camera in every room)
+
+---
+
+
+**DaemonSets vs. Other Controllers**
+
+| Controller   | What It Does                              | Example Use Case                        |
+|--------------|-------------------------------------------|-----------------------------------------|
+| **ReplicaSet** | Ensures a **specific number** of Pods are running. | Running 3 copies of a web server        |
+| **Deployment**  | Manages ReplicaSets for rolling updates.   | Updating a web server to a new version   |
+| **DaemonSet**    | Ensures **one Pod on every node**.             | Running a log collector on every machine |
+
+
+```bash
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+  name: prometheus-node-exporter
+  labels:
+    app: node-exporter
+spec:
+  selector:
+    matchLabels:
+      app: node-exporter
+  template:
+    metadata:
+      labels:
+        app: node-exporter
+    spec:
+      containers:
+      - name: node-exporter
+        image: prom/node-exporter:v1.3.1 
+```
+
+
 
 
 Date: 28-July-2025
