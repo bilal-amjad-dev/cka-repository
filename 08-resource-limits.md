@@ -1,4 +1,12 @@
 
+**Requests**: The **minimum amount of resources** (CPU and memory) a container needs to run. Kubernetes uses this to schedule the pod on a node with sufficient resources.
+
+
+**Limits**: The **maximum amount of resources** (CPU and memory) a container can use. Exceeding memory limits causes termination (OOMKilled); exceeding CPU limits causes throttling.
+
+
+
+
 Your pod:
 
 - **Has 1Gi reserved** (via requests)—it’s guaranteed this much memory.
