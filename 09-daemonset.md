@@ -1,11 +1,13 @@
 
 **What is a DaemonSet?**
+
 A **DaemonSet** is a Kubernetes controller that guarantees that a copy of a specific Pod runs on **every node** in your cluster.
 
 Think of it as a **"one Pod per node"** rule. A DaemonSet's purpose is to ensure that a cluster-wide service is always running on every single host.
 
 
 **Why and When to Use It?**
+
 DaemonSets are essential for applications that need to perform a system-level task on all nodes. They are used for services that should not be run in a random location but must be present on every machine.
 
 Common use cases include:
