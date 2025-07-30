@@ -31,6 +31,90 @@ kubectl rollout history deployment <deployment-name>
 kubectl rollout undo deployment <deployment-name>
 ```
 
+---
+
+
+### Lab
+
+`vi nginx-deployment.yaml`
+
+```bash
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: nginx
+  template:
+    metadata:
+      labels:
+        app: nginx
+    spec:
+      containers:
+      - name: nginx
+        image: nginx:1.21.1
+        ports:
+        - containerPort: 80
+```
+- Here you can see the image is `nginx:1.21.1`
+
+```bash
+kubectl apply -f nginx-deployment.yaml
+```
+
+- **Verify pods are running:**
+```bash
+kubectl get pods -l app=nginx
+```
+
+
+- **Start a rolling update by changing the nginx image version from `1.21.1` to `1.22.0`:**
+```bash
+kubectl set image deployment/nginx-deployment nginx=nginx:1.22.0
+```
+
+- **Check the rollout status to monitor progress:**
+```bash
+kubectl rollout status deployment/nginx-deployment
+```
+
+It means:
+- Kubernetes finished updating your deployment called nginx-deployment.
+- All the new pods you requested (for example, with a new image) are now running and healthy.
+- The old pods (from the previous version) have been completely replaced.
+
+`cat nginx-deployment.yaml`
+- Here you can see the image has changed the nginx image version from `1.21.1` to `1.22.0`
+
+- **Watch pods update and replace old ones:**
+```bash
+kubectl get pods -l app=nginx
+```
+
+- **Verify Rollout History**
+```bash
+kubectl rollout history deployment/nginx-deployment
+```
+
+--- 
+
+
+- **Rollback to Previous Version (if needed)**
+```bash
+kubectl rollout undo deployment/nginx-deployment
+```
+
+- **Check pods to confirm they reverted:**
+```bash
+kubectl get pods -l app=nginx
+```
+
+
+
+
 
 
 Date: 30-July-2025
