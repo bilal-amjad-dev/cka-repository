@@ -101,6 +101,9 @@ kubectl top pods --all-namespaces
 ```
 
 
-
+Resource: 
+- Matesh-me
+- KodeKloudhub
+- Perplexity.ai
 
 Date: 30-July-2025
