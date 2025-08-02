@@ -12,7 +12,9 @@ env:
       configMapKeyRef:
         name: test-cm
         key: db-port
-```           
+```
+
+       
       - `envFrom` **with** `configMapRef` (for all key injection)
 
 ```bash
