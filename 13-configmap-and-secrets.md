@@ -45,10 +45,9 @@ volumes:
 apiVersion: v1
 kind: ConfigMap
 metadata:
- name: app-config
+  name: app-config
 data:
- APP_COLOR: blue
- APP_MODE: prod
+  COLOR: "blue"
 ```
 ```bash
 kubectl apply -f config-map.yaml
@@ -67,14 +66,14 @@ kind: Pod
 metadata:
   name: simple-webapp-color
 spec:
- containers:
- - name: simple-webapp-color
-   image: simple-webapp-color
-   ports:
-   - containerPort: 8080
-   envFrom:
-   - configMapRef:
-       name: app-config
+  containers:
+  - name: simple-webapp-color
+    image: katacoda/docker-hello-world
+    ports:
+    - containerPort: 80
+    envFrom:
+    - configMapRef:
+        name: app-config
 ```
 ```bash
 kubectl create -f my-pod.yaml
