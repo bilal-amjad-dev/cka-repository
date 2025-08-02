@@ -48,7 +48,7 @@ metadata:
   name: app-config
 data:
   MESSAGE: "Hello from my app with a ConfigMap!"
-  HTTP_PORT: "8080"
+  HTTP_PORT: "8000"
 ```
 ```bash
 kubectl apply -f config-map.yaml
@@ -94,7 +94,7 @@ kubectl exec -it PODNAME -- /bin/bash
 ```
 
 ```bash
-env | grep APP
+env | grep MESSAGE
 ```
 
 ```bash
