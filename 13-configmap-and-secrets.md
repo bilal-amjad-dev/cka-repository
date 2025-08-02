@@ -47,7 +47,8 @@ kind: ConfigMap
 metadata:
   name: app-config
 data:
-  COLOR: "blue"
+  MESSAGE: "Hello from my app with a ConfigMap!"
+  HTTP_PORT: "8080"
 ```
 ```bash
 kubectl apply -f config-map.yaml
@@ -64,13 +65,13 @@ kubectl get cm
 apiVersion: v1
 kind: Pod
 metadata:
-  name: simple-webapp-color
+  name: simple-webapp
 spec:
   containers:
-  - name: simple-webapp-color
-    image: katacoda/docker-hello-world
+  - name: simple-webapp
+    image: hashicorp/http-echo
     ports:
-    - containerPort: 80
+    - containerPort: 8080
     envFrom:
     - configMapRef:
         name: app-config
