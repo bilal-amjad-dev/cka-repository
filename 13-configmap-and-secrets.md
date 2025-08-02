@@ -53,6 +53,24 @@ kubectl create -f my-pod.yaml
 
 
 
+- To see pods
+```bash
+kubectl get pods
+```
+
+- To go inside the pod
+```bash
+kubectl exec -it PODNAME -- /bin/bash
+```
+
+```bash
+env | grep DB
+```
+
+```bash
+exit
+```
+- By doing this, our pods are not deleted. 
 
 
 
