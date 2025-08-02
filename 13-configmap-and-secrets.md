@@ -14,12 +14,14 @@ env:
         key: db-port
 ```           
       - `envFrom` **with** `configMapRef` (for all key injection)
+
 ```bash
 envFrom:
   - configMapRef:
       name: app-config
 ```
       - `volumes` **with** `configMap` (for file system injection)
+
 ```bash
 volumeMounts:
 - name: db-connection
