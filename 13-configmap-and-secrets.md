@@ -55,12 +55,12 @@ spec:
 ```
 
 
-
+- To see pods
 ```bash
 kubectl get pods
 ```
 
-
+- To go inside the pod
 ```bash
 kubectl exec -it PODNAME -- /bin/bash
 ```
