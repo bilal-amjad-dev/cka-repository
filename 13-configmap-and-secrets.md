@@ -72,6 +72,7 @@ cat /opt/db-port | more
 ```bash
 exit
 ```
+- By doing this, our pods are not deleted. 
 
 ---
 ### Secrets
