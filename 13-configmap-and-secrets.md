@@ -3,6 +3,63 @@
   - Second, Inject then into the pod.
 
 
+There are three methods to inject it into pod are:
+- `env` **with** `configMapKeyRef` (for single key injection)
+- `envFrom` **with** `configMapRef` (for all key injection)
+- `volumes` **with** `configMap` (for file system injection)
+
+### Lab of KodeKloudhub:
+**Step 1: Create ConfigMap**
+`vi config-map.yaml`
+```bash
+apiVersion: v1
+kind: ConfigMap
+metadata:
+ name: app-config
+data:
+ APP_COLOR: blue
+ APP_MODE: prod
+```
+```bash
+kubectl apply -f config-map.yaml
+```
+
+```bash
+kubectl get cm
+```
+
+**Step 2: Inject then in the pod/deployment**
+`vi my-pod.yaml`
+
+```bash
+apiVersion: v1
+kind: Pod
+metadata:
+  name: simple-webapp-color
+spec:
+ containers:
+ - name: simple-webapp-color
+   image: simple-webapp-color
+   ports:
+   - containerPort: 8080
+   envFrom:
+   - configMapRef:
+       name: app-config
+```
+```bash
+kubectl create -f my-pod.yaml
+```
+
+
+
+
+
+
+
+
+
+
+
 
 
 - Many services need configuration files.
