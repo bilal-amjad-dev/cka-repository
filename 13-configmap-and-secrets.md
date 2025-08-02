@@ -3,8 +3,8 @@
   - Second, Inject then into the pod.
 
 
-    - There are three methods to inject it into pod are:
-      - `env` **with** `configMapKeyRef` (for single key injection)
+- There are three methods to inject it into pod are:
+ - `env` **with** `configMapKeyRef` (for single key injection)
 ```bash
 env:
   - name: DB-PORT
@@ -15,14 +15,15 @@ env:
 ```
 
        
-      - `envFrom` **with** `configMapRef` (for all key injection)
+ - `envFrom` **with** `configMapRef` (for all key injection)
 
 ```bash
 envFrom:
   - configMapRef:
       name: app-config
 ```
-      - `volumes` **with** `configMap` (for file system injection)
+
+ - `volumes` **with** `configMap` (for file system injection)
 
 ```bash
 volumeMounts:
