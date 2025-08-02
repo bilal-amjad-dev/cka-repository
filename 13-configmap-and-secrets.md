@@ -69,7 +69,7 @@ kubectl create -f my-pod.yaml
 - If you have sensitive data then store it in secrets.
 
 
-### Lab:
+### Lab of Sir Abhishek Veeramalla:
 `vi test-cm.yaml`
 ```bash
 apiVersion: v1
