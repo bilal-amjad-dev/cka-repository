@@ -3,7 +3,7 @@
   - Second, Inject then into the pod.
 
 
-- There are three methods to inject it into pod are:
+ *There are three methods to inject it into pod are:*
  - `env` **with** `configMapKeyRef` (for single key injection)
 ```bash
 env:
