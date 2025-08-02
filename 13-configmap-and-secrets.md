@@ -86,5 +86,5 @@ kubectl describe secret test-secret
 kubectl edit secret test-secret 
 ```
 
-
+Source: Abhishek Veeramalla
 Date: 2-August-2025
