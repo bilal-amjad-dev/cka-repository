@@ -1,8 +1,6 @@
-There are 2 phases involved in configuring ConfigMaps.
-
-First, create the configMaps
-
-Second, Inject then into the pod.
+- There are 2 phases involved in configuring ConfigMaps.
+  - First, create the configMaps
+  - Second, Inject then into the pod.
 
 
 
