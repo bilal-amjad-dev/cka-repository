@@ -5,8 +5,33 @@
 
     - There are three methods to inject it into pod are:
       - `env` **with** `configMapKeyRef` (for single key injection)
+```bash
+env:
+  - name: DB-PORT
+    valueFrom:
+      configMapKeyRef:
+        name: test-cm
+        key: db-port
+```           
       - `envFrom` **with** `configMapRef` (for all key injection)
+```bash
+envFrom:
+  - configMapRef:
+      name: app-config
+```
       - `volumes` **with** `configMap` (for file system injection)
+```bash
+volumeMounts:
+- name: db-connection
+  mountPath: /opt
+# ...
+volumes:
+- name: db-connection
+  configMap:
+    name: test-cm
+```
+
+
 
 ### Lab of KodeKloudhub:
 **Step 1: Create ConfigMap**
