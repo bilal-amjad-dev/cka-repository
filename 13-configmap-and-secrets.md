@@ -3,10 +3,10 @@
   - Second, Inject then into the pod.
 
 
-There are three methods to inject it into pod are:
-- `env` **with** `configMapKeyRef` (for single key injection)
-- `envFrom` **with** `configMapRef` (for all key injection)
-- `volumes` **with** `configMap` (for file system injection)
+    - There are three methods to inject it into pod are:
+      - `env` **with** `configMapKeyRef` (for single key injection)
+      - `envFrom` **with** `configMapRef` (for all key injection)
+      - `volumes` **with** `configMap` (for file system injection)
 
 ### Lab of KodeKloudhub:
 **Step 1: Create ConfigMap**
