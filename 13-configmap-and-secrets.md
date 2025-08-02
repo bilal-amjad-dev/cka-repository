@@ -69,9 +69,9 @@ metadata:
 spec:
   containers:
   - name: simple-webapp
-    image: hashicorp/http-echo
+    image: abhishekf5/python-sample-app-demo:v1
     ports:
-    - containerPort: 8080
+    - containerPort: 8000
     envFrom:
     - configMapRef:
         name: app-config
