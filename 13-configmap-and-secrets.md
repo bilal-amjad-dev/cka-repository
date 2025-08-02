@@ -94,7 +94,7 @@ kubectl exec -it PODNAME -- /bin/bash
 ```
 
 ```bash
-env | grep DB
+env | grep APP
 ```
 
 ```bash
