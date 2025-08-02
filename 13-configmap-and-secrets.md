@@ -73,6 +73,8 @@ cat /opt/db-port | more
 exit
 ```
 
+---
+### Secrets
 
 ```bash
 kubectl create secret generic test-secret --from-literal=db-port="3306"
