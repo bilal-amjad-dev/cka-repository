@@ -1,3 +1,10 @@
+There are 2 phases involved in configuring ConfigMaps.
+
+First, create the configMaps
+
+Second, Inject then into the pod.
+
+
 
 
 - Many services need configuration files.
@@ -88,4 +95,5 @@ kubectl edit secret test-secret
 ```
 
 Source: Abhishek Veeramalla
+KodeKloudhub
 Date: 2-August-2025
