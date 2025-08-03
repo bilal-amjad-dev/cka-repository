@@ -187,6 +187,32 @@ exit
 ---
 ### Secrets
 
+`vi my-secret.yaml`
+```bash
+# my-secret.yaml
+apiVersion: v1
+kind: Secret
+metadata:
+  name: my-app-secret
+type: Opaque # Opaque is the default type for generic secrets
+data:
+  DB_USERNAME: bXl1c2Vy      # 'myuser' base64 encoded
+  DB_PASSWORD: bXlwYXNzd29yZA== # 'mypassword' base64 encoded
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ```bash
 kubectl create secret generic test-secret --from-literal=db-port="3306"
 ```
